@@ -48,4 +48,5 @@ export default [
         "handle": "@nasa",
         "tuit": "NASA develops a new type of efficient rocket fuel. It is more cost effective and safer for the environment than the previous fuel."
     }
+
 ];
