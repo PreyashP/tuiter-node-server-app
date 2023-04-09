@@ -6,17 +6,27 @@ import * as tuitsDao from "../tuits/tuits-dao.js";
 
 const createTuit = async (req, res) => {
     const newTuit = req.body;
-    newTuit.likes = 0;
+    newTuit.userName = 'JavaScript';
+    newTuit.time = '2hr';
+    newTuit.image = 'javascript-logo.png';
     newTuit.liked = false;
-    const insertedTuit = await tuitsDao
-        .createTuit(newTuit);
-    res.json(insertedTuit);
+    newTuit.disliked = false;
+    newTuit.replies = 0;
+    newTuit.retuits = 0;
+    newTuit.likes = 0;
+    newTuit.dislikes = 0;
+    newTuit.handle = 'javascript';
 
+    const insertedTuit = await tuitsDao.createTuit(newTuit);
+    res.json(insertedTuit);
 }
+
+
 
 const findTuits = async (req, res) => {
     const tuits = await tuitsDao.findTuits()
     res.json(tuits);
+    console.log(tuits)
 }
 
 
